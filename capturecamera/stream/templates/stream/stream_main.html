@@ -1,0 +1,93 @@
+{%extends 'main_index.html'%}
+{%load static%}
+<%block index%>
+    <title> Stream Main</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-0">
+          </div>
+          <div class="col">
+            <div class="container" id="container">
+              <form action="save_img.php" method="post" id="form_id">
+                 <div class="row ">
+                          <div class="col">
+                            <center>
+                            <div class="select">
+                              <label for="videoSource" class="form-label">Video source: </label>
+                              <select id="videoSource" class="form-select" style="width: 40ex;"></select>
+                            </div><br>
+                            <div class="camera">
+                              <div class="">
+                                <video id="video">Video stream not available.</video>
+                              </div>
+                              <div>
+                                <div class="d-grid gap-2" style="width: 40ex;">
+                                <button id="startbutton" class="btn btn-secondary">Take photo</button>
+                                <input type="submit" class="btn btn-secondary" value="Submit" >
+                                </div>
+                              </div>
+                            </div>
+                          </center>
+                          </div>
+                      
+                 </div><br>
+                 <div class="row">
+                  
+                    <div class="col">
+                      <div class="text-end " style="width: 40ex;">
+                      <button type="button" id="frmbtn" class="bg-dark btn-outline-dark btn-close" aria-label="Close"></button>
+                      </div>
+                      <canvas id="fcanvis" class="card">
+                        <div >
+                                <img id="firstimg" alt="The screen capture will appear in this box.">    
+                        </div>
+                    </canvas>
+                    <input type="hidden" name="image" id="image-tag1">
+                    <div class="d-grid gap-2" style="width: 40ex;">
+                    
+                    </div><br>
+                    </div>
+
+                  
+                  
+                    <div class="col">
+                      <div class="text-end" style="width: 40ex;">
+                      <button type="button" id="srmbtn" class="btn-close" aria-label="Close"></button>
+                      </div>
+                      <canvas id="scanvis" class="card">
+                        <div >
+                                <img id="secondimg" alt="The screen capture will appear in this box.">        
+                        </div>
+                    </canvas>
+                    <input type="hidden" name="image2" id="image-tag2">
+                    <div class="d-grid gap-2" style="width: 40ex;">
+                    
+                    </div><br>
+                    </div>
+
+                    <div class="col">
+                      <div class="text-end" style="width: 40ex;">
+                        <button type="button" id="trmbtn" class="btn-close" aria-label="Close"></button>
+                      </div>
+                      
+                      <canvas id="tcanvis" class="card">
+                        <div>
+                                <img id="thridimg" alt="The screen capture will appear in this box.">
+                        </div>
+                    </canvas>
+                    <input type="hidden" name="image3" id="image-tag3">
+                    </div>
+
+                 </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-0">
+            
+          </div>
+        </div>
+      </div>
+<script async src="{% static 'stream/js/capture.js'%}"></script>
+<%endblock%>
